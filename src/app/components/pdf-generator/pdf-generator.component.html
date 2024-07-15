@@ -1,0 +1,24 @@
+<div class="card shadow-sm">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Generator pdf</h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="personId" class="form-label">Dane osobowe:</label>
+        <select id="personId" formControlName="personId" class="form-control">
+          <option *ngFor="let info of personalInfos" [value]="info.id">{{ info.firstName }} {{ info.lastName }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="textEntryId" class="form-label">Tekst:</label>
+        <select id="textEntryId" formControlName="textEntryId" class="form-control">
+          <option *ngFor="let entry of textEntries" [value]="entry.id">{{ entry.content.slice(0, 15) }}...</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Generuj PDF</button>
+    </form>
+  </div>
+</div>
