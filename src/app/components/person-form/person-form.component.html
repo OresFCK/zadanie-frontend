@@ -1,0 +1,26 @@
+<div class="card shadow-sm">
+    <div class="card-header">
+      <h5 class="card-title mb-0">Person Form</h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name:</label>
+          <input id="firstName" formControlName="firstName" class="form-control">
+        </div>
+        
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name:</label>
+          <input id="lastName" formControlName="lastName" class="form-control">
+        </div>
+        
+        <div class="mb-3">
+          <label for="address" class="form-label">Address:</label>
+          <input id="address" formControlName="address" class="form-control">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  
